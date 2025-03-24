@@ -20,4 +20,4 @@ This website is my personal project, built with the Editorial template by HTML5 
 
 ## Contact
 
-Feel free to reach out via email: [your-email@example.com](mailto:your-email@example.com)
+Feel free to reach out via email: [johnpaulfeliciano98@gmail.com](mailto:johnpaulfeliciano98@gmail.com)
