@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Automated ICD-10 Coding for EMR Data | John Paul's Portfolio</title>
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>John Paul Feliciano</strong></a>
+					<ul class="icons">
+						<li>
+							<a href="https://www.linkedin.com/in/johnp-feliciano/" target="_blank"
+								rel="noopener noreferrer" class="icon brands fa-linkedin" title="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/johnpaulfeliciano98" target="_blank" rel="noopener noreferrer"
+								class="icon brands fa-github" title="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					</ul>
+				</header>
+
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>Automated ICD-10 Coding for EMR Data</h1>
+					</header>
+
+					<p>
+						This microservice suite allows the submission of patient information—including chief
+						complaints—and
+						automatically returns the corresponding ICD-10 codes. The communication between the sender
+						(EMR User Input) and the receiver (ICD-10 Processor) is handled via RabbitMQ.
+					</p>
+
+					<hr class="major" />
+
+					<!-- Prerequisites -->
+					<h2>Prerequisites</h2>
+					<ul>
+						<li><strong>RabbitMQ:</strong> Install RabbitMQ locally or on a server.</li>
+						<li><strong>Python Libraries:</strong> Install <code>pika</code> and <code>requests</code> via
+							<code>pip install pika requests</code>
+						</li>
+					</ul>
+
+					<hr class="major" />
+
+					<!-- Communication Contract -->
+					<h2>Communication Contract</h2>
+
+					<h3>Sending Data (EMR User Input)</h3>
+					<p>
+						<strong>Endpoint:</strong> RabbitMQ Queue – <code>chief_complaints_queue</code><br />
+						<strong>Payload:</strong> JSON object containing user information:
+					</p>
+					<pre><code>{
+"name": "John Doe",
+"dob": "1990-01-01",
+"age": 32,
+"gender": "M",
+"chief_complaints": "Chest pain",
+"vitals": {
+	"hr": 75,
+	"bp": "120/80",
+	"rr": 18,
+	"o2_saturation": 98,
+	"temperature": 98.6
+},
+"eta": 15,
+"los": "ALS"
+}
+</code></pre>
+
+					<h3>Receiving Data (ICD-10 Processor)</h3>
+					<p>
+						<strong>Response:</strong><br />
+						The ICD-10 microservice prints the received chief complaint and its corresponding ICD-10 code:
+					</p>
+					<pre><code>[x] Received Chief Complaint: Chest pain
+[x] Corresponding ICD-10 Code: I20.9
+</code></pre>
+
+					<hr class="major" />
+
+					<!-- UML Sequence Diagram -->
+					<h2>UML Sequence Diagram</h2>
+					<figure>
+						<img src="images/emr-microservice-uml-diagram.png" alt="UML Sequence Diagram"
+							style="max-width:100%; height:auto;">
+						<figcaption>High-level UML sequence diagram showing data flow between the EMR User Input and
+							ICD-10 Processor.</figcaption>
+					</figure>
+
+					<hr class="major" />
+
+					<!-- Example Call -->
+					<h2>Example Call</h2>
+					<ol>
+						<li>
+							<strong>Send Patient Information (EMR User Input):</strong><br />
+							Run <code>emr-user-input.py</code> and enter patient details as prompted. After entering all
+							information, choose option <code>0</code> to submit. The patient data, including the chief
+							complaint, is sent to the microservice via RabbitMQ.
+						</li>
+						<li>
+							<strong>Receive and Process (ICD-10 Processor):</strong><br />
+							Run <code>receive.py</code>. The microservice consumes messages from the RabbitMQ queue
+							and prints the received chief complaint with its ICD-10 code.
+						</li>
+					</ol>
+
+					<hr class="major" />
+
+					<!-- GitHub Repository -->
+					<h2>Interest in More?</h2>
+					<p>
+						<strong>Source Code:</strong>
+						<a href="https://github.com/johnpaulfeliciano98/emergency-response-coordination-system"
+							target="_blank" rel="noopener noreferrer">
+							Automated ICD-10 Coding for EMR Data
+						</a>
+					</p>
+
+				</section>
+
+			</div>
+		</div>
+
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="aboutme.html">About Me</a></li>
+						<li>
+							<span class="opener"> Programming Projects</span>
+							<ul>
+								<li><a href="911-forecasting.html">Real-Time EMS Call Prediction</a>
+								</li>
+								<li><a href="bg-check.html">ICU Insulin Infusion Calculator</a></li>
+								<li><a href="emr-microservice.html">Automated ICD-10 Coding for EMR Data</a></li>
+								<li><a href="patient-database.html">Patient Charting Database</a></li>
+								<li><a href="ping-trace.html">Ping Trace</a></li>
+								<li><a href="vpambu-invoice-tool.html">Ambulance Billing Invoice Report Tool</a></li>
+							</ul>
+						</li>
+						<li>
+							<span class="opener">Data Analysis Projects</span>
+							<ul>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Airbnb%20Dashboard"
+										target="_blank" rel="noopener noreferrer">
+										Airbnb Dashboard <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Bike%20Sales%20Analysis"
+										target="_blank" rel="noopener noreferrer">
+										Bike Sales Analysis <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/COVID%20Death%20and%20Vaccination%20Data%20Exploration"
+										target="_blank" rel="noopener noreferrer">
+										COVID Death and Vaccination Data Exploration <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Data%20Professional%20Survey%20Dashboard"
+										target="_blank" rel="noopener noreferrer">
+										Data Professional Survey Dashboard <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Nashville%20Housing%20Data%20Cleaning"
+										target="_blank" rel="noopener noreferrer">
+										Nashville Housing Data Cleaning <i class="fab fa-github"></i>
+									</a>
+								</li>
+							</ul>
+
+						</li>
+					</ul>
+				</nav>
+
+				<!-- Get in touch Section -->
+				<section>
+					<header class="major">
+						<h2>Get in touch</h2>
+					</header>
+					<p>I'm actively seeking opportunities as a Software Engineer or Developer. If you're hiring
+						or have
+						a role that aligns with my skills, feel free to reach out!</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope">
+							<a href="mailto:johnpaulfeliciano98@gmail.com">johnpaulfeliciano98@gmail.com</a>
+						</li>
+						<li class="icon solid fa-phone">
+							<a href="tel:+19513156763">(951) 315-6763</a>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">
+						&copy; 2025 John Paul Feliciano. Built with HTML5 UP.
+					</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

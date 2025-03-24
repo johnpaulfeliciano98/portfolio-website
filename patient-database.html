@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Patient Charting Database | John Paul's Portfolio</title>
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!-- Main CSS file -->
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main Content Area -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>John Paul Feliciano</strong></a>
+					<ul class="icons">
+						<li>
+							<a href="https://www.linkedin.com/in/johnp-feliciano/" target="_blank"
+								rel="noopener noreferrer" class="icon brands fa-linkedin" title="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/johnpaulfeliciano98" target="_blank" rel="noopener noreferrer"
+								class="icon brands fa-github" title="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					</ul>
+				</header>
+
+				<!-- Project Title -->
+				<section>
+					<header class="main">
+						<h1>Patient Charting Database</h1>
+					</header>
+
+					<p>
+						<strong>Project Title:</strong> Patient Charting Database<br>
+						<strong>Technology Used:</strong> Flask, Python
+					</p>
+
+					<hr class="major" />
+
+					<!-- Overview -->
+					<h2>Overview</h2>
+					<p>
+						The Evergreen Health Clinic is transitioning from a paper-based chart system to a digital
+						database to efficiently manage its increasing patient base. This system handles critical data
+						such as patient contact details, diagnoses, and treatments, enhancing patient care and
+						streamlining operations.
+					</p>
+
+					<hr class="major" />
+
+					<!-- Database Design Process -->
+					<h2>Database Design Process</h2>
+					<p>
+						The design focuses on normalization to ensure data integrity and minimize redundancy. The main
+						entities include Clinics, Patients, Doctors, Diagnoses, and Procedures. Each entity is linked
+						using primary and foreign keys to maintain structured relationships.
+					</p>
+
+					<hr class="major" />
+
+					<!-- Database Outline -->
+					<h2>Database Outline</h2>
+					<p>
+						The system includes the following tables:
+					</p>
+					<ul>
+						<li><strong>Clinics:</strong> Contains clinic_ID, clinic_name, address, clinic_phone_number, and
+							email.</li>
+						<li><strong>Patients:</strong> Records patient_ID, patient_name, date_of_birth,
+							patient_phone_number, clinic_ID, diagnosis_ID, and procedure_ID.</li>
+						<li><strong>Doctors:</strong> Maintains doctor_ID, doctor_name, and clinic_ID.</li>
+						<li><strong>Diagnoses:</strong> Lists diagnosis_ID and disease_name.</li>
+						<li><strong>Procedures:</strong> Contains procedure_ID and procedure_name.</li>
+					</ul>
+
+					<hr class="major" />
+
+					<!-- Entity-Relationship Diagram -->
+					<h2>Entity-Relationship (ER) Diagram</h2>
+					<p>
+						The ER diagram below illustrates the relationships among the entities, including one-to-many and
+						many-to-many relationships.
+					</p>
+					<figure>
+						<img src="images/patient-charting-erd.png" alt="ER Diagram"
+							style="max-width:100%; height:auto;">
+						<figcaption>ER Diagram of Clinics, Patients, Doctors, Diagnoses, and Procedures.</figcaption>
+					</figure>
+
+					<hr class="major" />
+
+					<!-- Schema and Normalization -->
+					<h2>Schema and Normalization</h2>
+					<p>
+						The schema was designed with normalization in mind:
+					</p>
+					<ul>
+						<li><strong>1NF:</strong> Primary key attributes are defined for all tables.</li>
+						<li><strong>2NF:</strong> All non-key attributes fully depend on the primary key.</li>
+						<li><strong>3NF:</strong> Transitive dependencies have been removed to maintain data integrity.
+						</li>
+					</ul>
+					<figure>
+						<img src="images/patient-charting-schema.png" alt="Schema Diagram"
+							style="max-width:100%; height:auto;">
+						<figcaption>Schema Diagram</figcaption>
+					</figure>
+
+					<hr class="major" />
+
+					<!-- Major Changes and Implementation Steps -->
+					<h2>Major Changes and Implementation Steps</h2>
+					<ol>
+						<li>
+							<strong>Server Migration:</strong> Migrated from the FLIP server to the Classwork server to
+							address internal server errors and improve reliability.
+						</li>
+						<li>
+							<strong>Schema Adjustments:</strong> Implemented auto-increment for primary keys and
+							enforced non-NULL constraints to prevent errors.
+						</li>
+						<li>
+							<strong>Field Mapping and Data Handling:</strong> Corrected field mappings for update
+							operations and included invisible fields for primary keys.
+						</li>
+						<li>
+							<strong>User Interface Enhancements:</strong> Added CSS styling, dropdown menus for foreign
+							keys, and mandatory fields to improve usability.
+						</li>
+					</ol>
+
+					<hr class="major" />
+
+					<!-- Sample Data -->
+					<h2>Sample Data</h2>
+					<p>Examples of records in the system:</p>
+					<pre><code>
+Clinics:
+1  Evergreen  123 Fake St, Seattle, WA  2064445599  evergreen@aol.com
+2  Rainier   467 Sike St, Burien, WA   4259998787  rainier@hotmail.com
+
+Doctors:
+256  Dr. Lawrence  (Clinic 1)
+678  Dr. Timothy   (Clinic 1)
+901  Dr. Larry     (Clinic 2)
+
+Patients:
+999  Hasselhoff, Lam   1995-11-15  2062434484  (Clinic 1)
+1000 Steel, Rick      2003-05-28  4256619092  (Clinic 2)
+					</code></pre>
+
+					<hr class="major" />
+
+					<!-- User Interface -->
+					<h2>User Interface</h2>
+					<p>
+						The application supports full CRUD operations:
+					</p>
+					<ul>
+						<li><strong>Clinics Page:</strong> View, add, edit, and delete clinics.</li>
+						<li><strong>Diagnoses Page:</strong> Manage diagnoses with similar CRUD operations.</li>
+						<li><strong>Doctors Page:</strong> Manage doctor records and their patient associations.</li>
+						<li><strong>Patients Page:</strong> Handle patient records, including optional diagnosis
+							entries.</li>
+						<li><strong>Procedures Page:</strong> View, add, edit, and delete procedures.</li>
+						<li><strong>Patients Per Doctor Page:</strong> Manage many-to-many relationships between
+							patients and doctors.</li>
+						<li><strong>Diagnoses Per Patient Page:</strong> Update and delete patient diagnosis
+							relationships.</li>
+					</ul>
+					<figure>
+						<img src="images/patient-charting-ui.png" alt="UI Screenshot"
+							style="max-width:100%; height:auto;">
+						<figcaption>Application User Interface</figcaption>
+					</figure>
+
+					<hr class="major" />
+
+					<!-- Conclusion -->
+					<h2>Conclusion</h2>
+					<p>
+						The project has evolved significantly, resulting in enhanced server stability, improved database
+						integrity, and a user-friendly interface. These changes empower Evergreen Health Clinic to
+						manage its growing patient base effectively and deliver high-quality healthcare.
+					</p>
+
+					<hr class="major" />
+
+					<!-- Project Documentation PDF -->
+					<h2>Project Documentation</h2>
+					<object data="documents/Patient-Charting-Database.pdf" type="application/pdf" width="100%"
+						height="600px">
+						<p>Your browser does not support PDFs. Please download the PDF to view it: <a
+								href="documents/Patient-Charting-Database.pdf">Download PDF</a>.</p>
+					</object>
+
+					<hr class="major" />
+
+					<!-- Interested in More Section -->
+					<h2>Interested in More?</h2>
+					<p>
+						<strong>Source Code:</strong>
+						<a href="https://github.com/johnpaulfeliciano98/patient-charting-database" target="_blank"
+							rel="noopener noreferrer">
+							Patient Charting Database
+						</a>
+					</p>
+
+				</section>
+
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="aboutme.html">About Me</a></li>
+						<li>
+							<span class="opener"> Programming Projects</span>
+							<ul>
+								<li><a href="911-forecasting.html">Real-Time EMS Call Prediction</a>
+								</li>
+								<li><a href="bg-check.html">ICU Insulin Infusion Calculator</a></li>
+								<li><a href="emr-microservice.html">Automated ICD-10 Coding for EMR Data</a></li>
+								<li><a href="patient-database.html">Patient Charting Database</a></li>
+								<li><a href="ping-trace.html">Ping Trace</a></li>
+								<li><a href="vpambu-invoice-tool.html">Ambulance Billing Invoice Report Tool</a></li>
+							</ul>
+						</li>
+						<li>
+							<span class="opener">Data Analysis Projects</span>
+							<ul>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Airbnb%20Dashboard"
+										target="_blank" rel="noopener noreferrer">
+										Airbnb Dashboard <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Bike%20Sales%20Analysis"
+										target="_blank" rel="noopener noreferrer">
+										Bike Sales Analysis <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/COVID%20Death%20and%20Vaccination%20Data%20Exploration"
+										target="_blank" rel="noopener noreferrer">
+										COVID Death and Vaccination Data Exploration <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Data%20Professional%20Survey%20Dashboard"
+										target="_blank" rel="noopener noreferrer">
+										Data Professional Survey Dashboard <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Nashville%20Housing%20Data%20Cleaning"
+										target="_blank" rel="noopener noreferrer">
+										Nashville Housing Data Cleaning <i class="fab fa-github"></i>
+									</a>
+								</li>
+							</ul>
+
+						</li>
+					</ul>
+				</nav>
+
+				<!-- Get in touch Section -->
+				<section>
+					<header class="major">
+						<h2>Get in touch</h2>
+					</header>
+					<p>I'm actively seeking opportunities as a Software Engineer or Developer. If you're hiring or have
+						a role that aligns with my skills, feel free to reach out!</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope"><a
+								href="mailto:johnpaulfeliciano98@gmail.com">johnpaulfeliciano98@gmail.com</a></li>
+						<li class="icon solid fa-phone"><a href="tel:+19513156763">(951) 315-6763</a></li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">
+						&copy; 2025 John Paul Feliciano. Built with HTML5 UP.
+					</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

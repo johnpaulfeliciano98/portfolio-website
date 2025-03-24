@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Ping Trace | John Paul's Portfolio</title>
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main Content Area -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>John Paul Feliciano</strong></a>
+					<ul class="icons">
+						<li>
+							<a href="https://www.linkedin.com/in/johnp-feliciano/" target="_blank"
+								rel="noopener noreferrer" class="icon brands fa-linkedin" title="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/johnpaulfeliciano98" target="_blank" rel="noopener noreferrer"
+								class="icon brands fa-github" title="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					</ul>
+				</header>
+
+				<!-- Project Title -->
+				<section>
+					<header class="main">
+						<h1>Ping Trace</h1>
+					</header>
+
+					<p>
+						<strong>Project Title:</strong> Ping Trace<br>
+						<strong>Technology Used:</strong> Python, Raw Sockets, ICMP, Network Programming
+					</p>
+
+					<hr class="major" />
+
+					<!-- Overview -->
+					<h2>Overview</h2>
+					<p>
+						Ping Trace builds upon a raw socket ICMP ping implementation to offer traceroute functionality.
+						The project sends ICMP echo requests with incrementing TTL values to track the network path
+						from the source to a destination. Intermediate routers respond with ICMP Time Exceeded messages,
+						while the final destination replies with an ICMP Echo Reply. The tool validates responses and
+						aggregates key statistics, including round-trip times and packet loss.
+					</p>
+
+					<hr class="major" />
+
+					<!-- Features -->
+					<h2>Features</h2>
+					<ul>
+						<li>Utilizes raw socket programming in Python to construct and send ICMP packets.</li>
+						<li>Implements traceroute functionality by incrementing TTL values to discover intermediate
+							hops.</li>
+						<li>Processes multiple ICMP response types: Time Exceeded (type 11) for intermediate routers and
+							Echo Reply (type 0) for the destination.</li>
+						<li>Validates responses by comparing packet identifiers, sequence numbers, and embedded data.
+						</li>
+						<li>Calculates individual round-trip times and aggregates statistics such as minimum, maximum,
+							and average RTT, along with packet loss rate.</li>
+						<li>Handles error responses, including Destination Unreachable (ICMP type 3), for robust
+							performance.</li>
+					</ul>
+
+					<hr class="major" />
+
+					<!-- Code Overview -->
+					<h2>Code Overview</h2>
+					<p>
+						The project is organized around the <code>IcmpHelperLibrary</code> class, which encapsulates
+						both
+						ping and traceroute functionalities. Nested classes manage the creation, sending, and validation
+						of ICMP packets. Core operations include checksum calculation, raw byte data manipulation, and
+						network response handling. This structure demonstrates an effective application of low-level
+						network
+						programming in Python.
+					</p>
+
+					<hr class="major" />
+
+					<!-- Screenshots -->
+					<h2>Screenshots</h2>
+					<p>
+						Below are sample outputs from Ping Trace:
+					</p>
+					<figure>
+						<img src="images/traceroute-type11.png" alt="Ping Trace output for ICMP Time Exceeded (Type 11)"
+							style="max-width:100%; height:auto;">
+						<figcaption>Output showing an intermediate router response (ICMP Type 11).</figcaption>
+					</figure>
+					<figure>
+						<img src="images/traceroute-type0.png" alt="Ping Trace output for ICMP Echo Reply (Type 0)"
+							style="max-width:100%; height:auto;">
+						<figcaption>Output showing the destination response (ICMP Echo Reply, Type 0).</figcaption>
+					</figure>
+
+					<hr class="major" />
+
+					<!-- Interested in More Section -->
+					<h2>Interested in More?</h2>
+					<p>
+						<strong>Source Code:</strong>
+						<a href="https://github.com/johnpaulfeliciano98/ping-trace" target="_blank"
+							rel="noopener noreferrer">
+							Ping Trace
+						</a>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="aboutme.html">About Me</a></li>
+						<li>
+							<span class="opener"> Programming Projects</span>
+							<ul>
+								<li><a href="911-forecasting.html">Real-Time EMS Call Prediction</a>
+								</li>
+								<li><a href="bg-check.html">ICU Insulin Infusion Calculator</a></li>
+								<li><a href="emr-microservice.html">Automated ICD-10 Coding for EMR Data</a></li>
+								<li><a href="patient-database.html">Patient Charting Database</a></li>
+								<li><a href="ping-trace.html">Ping Trace</a></li>
+								<li><a href="vpambu-invoice-tool.html">Ambulance Billing Invoice Report Tool</a></li>
+							</ul>
+						</li>
+						<li>
+							<span class="opener">Data Analysis Projects</span>
+							<ul>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Airbnb%20Dashboard"
+										target="_blank" rel="noopener noreferrer">
+										Airbnb Dashboard <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Bike%20Sales%20Analysis"
+										target="_blank" rel="noopener noreferrer">
+										Bike Sales Analysis <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/COVID%20Death%20and%20Vaccination%20Data%20Exploration"
+										target="_blank" rel="noopener noreferrer">
+										COVID Death and Vaccination Data Exploration <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Data%20Professional%20Survey%20Dashboard"
+										target="_blank" rel="noopener noreferrer">
+										Data Professional Survey Dashboard <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Nashville%20Housing%20Data%20Cleaning"
+										target="_blank" rel="noopener noreferrer">
+										Nashville Housing Data Cleaning <i class="fab fa-github"></i>
+									</a>
+								</li>
+							</ul>
+
+						</li>
+					</ul>
+				</nav>
+
+				<!-- Get in touch Section -->
+				<section>
+					<header class="major">
+						<h2>Get in touch</h2>
+					</header>
+					<p>
+						I'm actively seeking opportunities as a Software Engineer or Developer. If you're hiring
+						or have
+						a role that aligns with my skills, feel free to reach out!
+					</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope"><a
+								href="mailto:johnpaulfeliciano98@gmail.com">johnpaulfeliciano98@gmail.com</a>
+						</li>
+						<li class="icon solid fa-phone"><a href="tel:+19513156763">(951) 315-6763</a></li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">
+						&copy; 2025 John Paul Feliciano. Built with HTML5 UP.
+					</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

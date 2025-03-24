@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Real-Time EMS Call Prediction | John Paul's Portfolio</title>
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>John Paul Feliciano</strong></a>
+					<ul class="icons">
+						<li>
+							<a href="https://www.linkedin.com/in/johnp-feliciano/" target="_blank"
+								rel="noopener noreferrer" class="icon brands fa-linkedin" title="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/johnpaulfeliciano98" target="_blank" rel="noopener noreferrer"
+								class="icon brands fa-github" title="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					</ul>
+				</header>
+
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>Real-Time EMS Call Prediction (Firecast)</h1>
+					</header>
+
+					<p>
+						<strong>Team Firecast:</strong> Ryan Kim, Evan Liu, Annalee Johnson, Antonio Young, John Paul
+						Feliciano<br />
+						<strong>Industry Partner:</strong> Levrum Technologies
+					</p>
+
+					<hr class="major" />
+
+					<h2>Project Poster</h2>
+					<p>Below is the official project poster for Firecast, summarizing our work on real-time EMS call
+						prediction.</p>
+
+					<figure>
+						<img src="images/Firecast2025Poster.png" alt="Firecast Project Poster"
+							style="max-width:100%; height:auto;">
+					</figure>
+
+					<hr class="major" />
+
+
+					<!-- Project Video -->
+					<h2>Project Video Demonstration</h2>
+					<p>Watch a detailed walkthrough of Firecast, explaining how the system predicts EMS calls in real
+						time.</p>
+					<div
+						style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000;">
+						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/W3As1v_qLsE"
+							title="Firecast Project Video" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+						</iframe>
+					</div>
+
+					<hr class="major" />
+
+					<!-- Project Overview -->
+					<h2>Project Goal</h2>
+					<p>
+						Fire departments face rising emergency calls due to urbanization, aging populations,
+						and climate change. This project (nicknamed “Firecast”) addresses this challenge by
+						predicting 911 EMS call volumes in real time. Our solution leverages
+						<strong>XGBoost</strong> for call-volume forecasting and
+						<strong>K-Means</strong> clustering to handle geospatial variation, helping agencies
+						plan and allocate resources more effectively.
+					</p>
+
+					<hr class="major" />
+
+					<h2>Key Features</h2>
+					<ul>
+						<li><strong>Daily 7-Day Forecasts:</strong> Predict call volumes for the next seven days, with
+							dynamic updates on a React-based heatmap.</li>
+						<li><strong>Geospatial Clustering:</strong> K-Means partitions the city into distinct zones to
+							account for different call densities.</li>
+						<li><strong>Interactive Mapbox Visualization:</strong> Users can zoom/pan through predicted
+							hotspots, improving ambulance posting strategies.</li>
+						<li><strong>Full-Stack Architecture:</strong> A Django server processes data, trains models, and
+							exposes REST API endpoints (<code>/train</code>, <code>/predict</code>,
+							<code>/boundaries</code>, <code>/heatmap</code>).
+						</li>
+						<li><strong>Extensive Model Research:</strong> Explored LSTM, Holt-Winters, and hybrid
+							approaches in the <code>/model-research</code> folder for future optimization.</li>
+					</ul>
+
+					<hr class="major" />
+
+					<!-- Screenshots Section -->
+					<h2>Screenshots</h2>
+					<p>Below are two screenshots of the Firecast frontend displaying EMS call predictions:</p>
+
+					<h3>Desktop View</h3>
+					<figure>
+						<img src="images/911-frontend-desktop.png" alt="Screenshot of the Firecast desktop interface"
+							style="max-width:100%; height:auto;">
+						<figcaption>Desktop interface showing daily forecasts on an interactive Mapbox heatmap.
+						</figcaption>
+					</figure>
+
+					<h3>Mobile View</h3>
+					<figure>
+						<img src="images/911-frontend-mobile.png" alt="Screenshot of the Firecast mobile interface"
+							style="max-width:100%; height:auto;">
+						<figcaption>Mobile interface with a heatmap view.</figcaption>
+					</figure>
+
+					<hr class="major" />
+
+					<h2>Tech Stack</h2>
+					<ul>
+						<li><strong>Backend:</strong> Django (Python), XGBoost, Pandas, NumPy</li>
+						<li><strong>Clustering & Spatial:</strong> SciPy (K-Means), GeoJSON</li>
+						<li><strong>Frontend:</strong> React (TypeScript), Vite, SCSS/Tailwind (shadCN), Mapbox</li>
+						<li><strong>Testing & QA:</strong> Vitest, ESLint</li>
+						<li><strong>Version Control:</strong> Git & GitHub</li>
+					</ul>
+
+					<!-- One-stop Tech Stack Image -->
+					<figure>
+						<img src="images/911-tech-stack.png" alt="Visual summary of the tech stack"
+							style="max-width:100%; height:auto;">
+					</figure>
+
+					<hr class="major" />
+
+					<h2>Development Highlights</h2>
+					<figure>
+						<img src="images/911-k-means.png" alt="Code block k-means method"
+							style="max-width:100%; height:auto;">
+					</figure>
+
+					<ul>
+						<li><strong>Transition from H3 to K-Means:</strong> Initially used Uber’s H3 for spatial binning
+							but switched to K-Means to handle uneven distributions and data sparsity.</li>
+						<li><strong>Feature Engineering:</strong> Added weekend/holiday indicators; integrated lat/long
+							coordinates, grouped by cluster for each model.</li>
+						<li><strong>Frontend/Backend Sync:</strong> Distinct endpoints (<code>/train</code>,
+							<code>/predict</code>, <code>/heatmap</code>, <code>/boundaries</code>) manage training,
+							prediction, and data delivery to a Mapbox heatmap.
+						</li>
+						<li><strong>Research & Iteration:</strong> Briefly tested advanced models (LSTM, GNN) and
+							documented them for future expansion.</li>
+					</ul>
+
+					<hr class="major" />
+
+					<h2>Challenges & Solutions</h2>
+					<ul>
+						<li><strong>Sparse Spatial Data:</strong> Switching to K-Means balanced data across clusters for
+							more robust training.</li>
+						<li><strong>Computational Constraints:</strong> LSTM/GNN required long training times—XGBoost
+							was faster for short deadlines.</li>
+						<li><strong>Frontend Integration:</strong> Coordinating data formats (GeoJSON) between Django
+							and React required careful design.</li>
+						<li><strong>Limited Timeline:</strong> Focused on an MVP; left advanced features like boundary
+							overlays for future development.</li>
+					</ul>
+
+					<hr class="major" />
+
+					<h2>Lessons Learned</h2>
+					<ul>
+						<li><strong>Early Prototyping:</strong> Balancing research with implementation helps expose
+							practical constraints quickly.</li>
+						<li><strong>Clear Roles & Communication:</strong> Well-defined responsibilities and frequent
+							check-ins keep teams aligned.</li>
+						<li><strong>Thorough Documentation:</strong> Properly documenting each step (from model
+							research to endpoint design) smooths future handovers.</li>
+					</ul>
+
+					<hr class="major" />
+
+					<h2>Future Directions</h2>
+					<ul>
+						<li><strong>Incorporate More Data:</strong> Weather, traffic, and demographic layers to refine
+							predictions.</li>
+						<li><strong>Refine XGBoost Tuning:</strong> Hyperparameter optimization to improve forecast
+							accuracy.</li>
+						<li><strong>Enhanced Frontend:</strong> Boundary overlays, zone-specific call tables, extended
+							time horizons.</li>
+						<li><strong>Remote Database & CI/CD:</strong> Cloud SQL for persistent data, plus automated
+							builds and retraining.</li>
+					</ul>
+
+					<hr class="major" />
+
+					<h2>Interested in More?</h2>
+					<p>
+						<strong>Source Code:</strong>
+						Explore the full source code on
+						<a href="https://github.com/johnpaulfeliciano98/ems-call-forecasting" target="_blank"
+							rel="noopener noreferrer">
+							GitHub
+						</a>
+						and check out additional model research in <code>/model-research</code>.
+					</p>
+				</section>
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="aboutme.html">About Me</a></li>
+						<li>
+							<span class="opener"> Programming Projects</span>
+							<ul>
+								<li><a href="911-forecasting.html">Real-Time EMS Call Prediction</a>
+								</li>
+								<li><a href="bg-check.html">ICU Insulin Infusion Calculator</a></li>
+								<li><a href="emr-microservice.html">Automated ICD-10 Coding for EMR Data</a></li>
+								<li><a href="patient-database.html">Patient Charting Database</a></li>
+								<li><a href="ping-trace.html">Ping Trace</a></li>
+								<li><a href="vpambu-invoice-tool.html">Ambulance Billing Invoice Report Tool</a></li>
+							</ul>
+						</li>
+						<li>
+							<span class="opener">Data Analysis Projects</span>
+							<ul>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Airbnb%20Dashboard"
+										target="_blank" rel="noopener noreferrer">
+										Airbnb Dashboard <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Bike%20Sales%20Analysis"
+										target="_blank" rel="noopener noreferrer">
+										Bike Sales Analysis <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/COVID%20Death%20and%20Vaccination%20Data%20Exploration"
+										target="_blank" rel="noopener noreferrer">
+										COVID Death and Vaccination Data Exploration <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Data%20Professional%20Survey%20Dashboard"
+										target="_blank" rel="noopener noreferrer">
+										Data Professional Survey Dashboard <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Nashville%20Housing%20Data%20Cleaning"
+										target="_blank" rel="noopener noreferrer">
+										Nashville Housing Data Cleaning <i class="fab fa-github"></i>
+									</a>
+								</li>
+							</ul>
+
+						</li>
+					</ul>
+				</nav>
+
+				<!-- Get in touch Section -->
+				<section>
+					<header class="major">
+						<h2>Get in touch</h2>
+					</header>
+					<p>I'm actively seeking opportunities as a Software Engineer or Developer. If you're hiring
+						or have
+						a role that aligns with my skills, feel free to reach out!</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope">
+							<a href="mailto:johnpaulfeliciano98@gmail.com">johnpaulfeliciano98@gmail.com</a>
+						</li>
+						<li class="icon solid fa-phone">
+							<a href="tel:+19513156763">(951) 315-6763</a>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">
+						&copy; 2025 John Paul Feliciano. Built with HTML5 UP.
+					</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

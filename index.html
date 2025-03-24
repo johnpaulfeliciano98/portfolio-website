@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Homepage | John Paul's Portfolio</title>
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>John Paul Feliciano</strong></a>
+					<ul class="icons">
+						<!-- Opens into a new tab -->
+						<li>
+							<a href="https://www.linkedin.com/in/johnp-feliciano/" target="_blank"
+								rel="noopener noreferrer" class="icon brands fa-linkedin" title="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+						<!-- Opens into a new tab -->
+						<li>
+							<a href="https://github.com/johnpaulfeliciano98" target="_blank" rel="noopener noreferrer"
+								class="icon brands fa-github" title="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					</ul>
+				</header>
+
+				<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h1>Portfolio</h1>
+							<p>A showcase of my coding projects and data analysis work
+							</p>
+						</header>
+						<p>Welcome to my portfolio. I work with a range of coding and data analysis tools to create
+							projects that reflect my skills and interests. Below, you'll find a selection of my work.
+							For more details about my background, please visit the About Me page.</p>
+						<ul class="actions">
+							<li><a href="aboutme.html" class="button big">About Me</a></li>
+						</ul>
+					</div>
+					<span class="image object">
+						<img src="images/self-portrait.jpeg" alt="" />
+					</span>
+				</section>
+
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Projects Overview</h2>
+					</header>
+					<div class="posts">
+						<article>
+							<a href="911-forecasting.html" class="image"><img src="images/911-heatmap.png" /></a>
+							<h3>Real-Time EMS Call Prediction</h3>
+							<p>This full-stack project forecasts 911 EMS calls with a Django + XGBoost backend and
+								K-Means clustering, generating daily predictions. React + Mapbox visuals provide
+								interactive heatmaps, while TDD ensures reliability and additional research explores
+								LSTM, Holt Winters, and more.</p>
+							<ul class="actions">
+								<li><a href="911-forecasting.html" class="button">More</a></li>
+							</ul>
+						</article>
+						<article>
+							<a href="bg-check.html" class="image"><img src="images/blood-sugar-check.png" /></a>
+							<h3>ICU Insulin Infusion Calculator</h3>
+							<p>A Flask-based web app that automates ICU insulin infusion calculations. It references
+								standardized dose-adjustment tables based on the patient's current and previous blood
+								glucose levels, dynamically suggesting holds, rate increases, or boluses. The interface
+								streamlines critical care workflows by replacing manual lookups with reliable, real-time
+								guidance for nurses.</p>
+							<ul class="actions">
+								<li><a href="bg-check.html" class="button">More</a></li>
+							</ul>
+						</article>
+						<article>
+							<a href="emr-microservice.html" class="image"><img src="images/emr-microservice-banner.jpg"
+									alt="" /></a>
+							<h3>Automated ICD-10 Coding for EMR Data</h3>
+							<p>This microservice automates ICD-10 coding for EMR systems to reduce manual entry. It
+								processes patient data, extracts chief complaints, and assigns ICD-10 codes using
+								RabbitMQ for efficient data exchange.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">More</a></li>
+							</ul>
+						</article>
+						<article>
+							<a href="patient-database.html" class="image"><img src="images/patient-charting-banner.png"
+									alt="" /></a>
+							<h3>Patient Charting Database</h3>
+							<p>This system digitizes patient charts, for record keeping. It reliably stores details,
+								diagnoses, and treatments in a normalized database to improve care.</p>
+							<ul class="actions">
+								<li><a href="patient-database.html" class="button">More</a></li>
+							</ul>
+						</article>
+						<article>
+							<a href="ping-trace.html" class="image"><img src="images/traceroute-banner.png"
+									alt="" /></a>
+							<h3>Ping Trace</h3>
+							<p>This project implements raw socket-based ICMP ping and traceroute functionality to
+								diagnose network paths. It sends echo requests with increasing TTL values, processes
+								responses from routers or the destination, and reports round-trip statistics and packet
+								loss.</p>
+							<ul class="actions">
+								<li><a href="ping-trace.html" class="button">More</a></li>
+							</ul>
+						</article>
+						<article>
+							<a href="vpambu-invoice-tool.html" class="image"><img
+									src="images/ambulance-billing-banner.jpg" alt="" /></a>
+							<h3>Ambulance Billing Invoice Report Tool</h3>
+							<p>This system automates billing report generation by integrating data from emergency
+								service platforms. It efficiently extracts, cleans, and merges trip details to enable
+								timely invoicing and prompt payments.</p>
+							<ul class="actions">
+								<li><a href="vpambu-invoice-tool.html" class="button">More</a></li>
+							</ul>
+						</article>
+					</div>
+				</section>
+
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="aboutme.html">About Me</a></li>
+						<li>
+							<span class="opener"> Programming Projects</span>
+							<ul>
+								<li><a href="911-forecasting.html">Real-Time EMS Call Prediction</a>
+								</li>
+								<li><a href="bg-check.html">ICU Insulin Infusion Calculator</a></li>
+								<li><a href="emr-microservice.html">Automated ICD-10 Coding for EMR Data</a></li>
+								<li><a href="patient-database.html">Patient Charting Database</a></li>
+								<li><a href="ping-trace.html">Ping Trace</a></li>
+								<li><a href="vpambu-invoice-tool.html">Ambulance Billing Invoice Report Tool</a></li>
+							</ul>
+						</li>
+						<li>
+							<span class="opener">Data Analysis Projects</span>
+							<ul>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Airbnb%20Dashboard"
+										target="_blank" rel="noopener noreferrer">
+										Airbnb Dashboard <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Bike%20Sales%20Analysis"
+										target="_blank" rel="noopener noreferrer">
+										Bike Sales Analysis <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/COVID%20Death%20and%20Vaccination%20Data%20Exploration"
+										target="_blank" rel="noopener noreferrer">
+										COVID Death and Vaccination Data Exploration <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Data%20Professional%20Survey%20Dashboard"
+										target="_blank" rel="noopener noreferrer">
+										Data Professional Survey Dashboard <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Nashville%20Housing%20Data%20Cleaning"
+										target="_blank" rel="noopener noreferrer">
+										Nashville Housing Data Cleaning <i class="fab fa-github"></i>
+									</a>
+								</li>
+							</ul>
+
+						</li>
+					</ul>
+				</nav>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Get in touch</h2>
+					</header>
+					<p>I'm actively seeking opportunities as a Software Engineer or Developer. If you're hiring or have
+						a role that aligns with my skills, feel free to reach out!</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope">
+							<a href="mailto:johnpaulfeliciano98@gmail.com">johnpaulfeliciano98@gmail.com</a>
+						</li>
+						<li class="icon solid fa-phone">
+							<a href="tel:+19513156763">(951) 315-6763</a>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; 2025 John Paul Feliciano.
+						Built with HTML5 UP.</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

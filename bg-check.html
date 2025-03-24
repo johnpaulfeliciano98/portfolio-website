@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>ICU Insulin Infusion Calculator | John Paul's Portfolio</title>
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<!-- Use the same main CSS file as your existing site -->
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>John Paul Feliciano</strong></a>
+					<ul class="icons">
+						<li>
+							<a href="https://www.linkedin.com/in/johnp-feliciano/" target="_blank"
+								rel="noopener noreferrer" class="icon brands fa-linkedin" title="LinkedIn">
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/johnpaulfeliciano98" target="_blank" rel="noopener noreferrer"
+								class="icon brands fa-github" title="GitHub">
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					</ul>
+				</header>
+
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>ICU Insulin Infusion Calculator</h1>
+					</header>
+
+					<p>
+						<strong>Author:</strong> John Paul Feliciano<br />
+						<strong>In Collaboration With:</strong> My sister, an RN at RUHS
+					</p>
+
+					<hr class="major" />
+
+					<!-- Physical Table Image -->
+					<h2>Digitizing the Physical Table</h2>
+					<p>
+						My sister works in the ICU at Riverside University Health System (RUHS), where she relies on a
+						paper-based reference table to quickly adjust insulin drip rates for patients with varying blood
+						sugar levels. Below is the photograph of that table:
+					</p>
+					<figure>
+						<img src="images/bg-check-table.jpg" alt="Physical Insulin Infusion Table"
+							style="max-width:100%; height:auto;">
+						<figcaption>The original drip-adjustment guide used in the ICU.</figcaption>
+					</figure>
+
+					<hr class="major" />
+
+					<!-- Project Goal -->
+					<h2>Project Goal</h2>
+					<p>
+						This project transforms the paper reference into an interactive, web-based tool, significantly
+						cutting down on calculation time and potential errors. By automating the drip-adjustment logic,
+						ICU nurses can quickly get recommended actions—like “hold for 30 minutes” or “increase infusion
+						rate by 0.5 units”—based on real-time blood glucose entries.
+					</p>
+
+					<hr class="major" />
+
+					<!-- Key Features -->
+					<h2>Key Features</h2>
+					<ul>
+						<li>
+							<strong>Automated Calculations:</strong> Enter current BG, previous BG, and infusion rate,
+							and
+							the tool applies the branching logic to give an immediate recommendation.
+						</li>
+						<li>
+							<strong>Clarity and Consistency:</strong> Standardizes the protocol, reducing variation in
+							how
+							nurses interpret the table.
+						</li>
+						<li>
+							<strong>Lightweight Flask App:</strong> Easy to deploy and maintain on local hospital
+							intranets
+							or via a simple hosting service.
+						</li>
+						<li>
+							<strong>Updatable Rules:</strong> The infusion adjustment logic is modular, so any hospital
+							policy changes can be quickly integrated.
+						</li>
+					</ul>
+
+					<hr class="major" />
+
+					<!-- Screenshots -->
+					<h2>App Screenshots</h2>
+					<p>
+						Below are a couple of screenshots illustrating the user interface:
+					</p>
+
+					<h3>Form for BG & Infusion Inputs</h3>
+					<figure>
+						<img src="images/bg-check-input.png" alt="ICU Calculator Input Form"
+							style="max-width:100%; height:auto;">
+						<figcaption>The user provides current/previous BG levels and the current drip rate.</figcaption>
+					</figure>
+
+					<h3>Real-Time Recommendations</h3>
+					<figure>
+						<img src="images/bg-check-result.png" alt="ICU Calculator Result"
+							style="max-width:100%; height:auto;">
+						<figcaption>Clear text instructions are generated based on the logic from the original table.
+						</figcaption>
+					</figure>
+
+					<hr class="major" />
+
+					<!-- Tech Stack -->
+					<h2>Tech Stack</h2>
+					<ul>
+						<li><strong>Backend:</strong> Flask (Python), with carefully structured conditional logic</li>
+						<li><strong>Frontend:</strong> HTML/Jinja templates; minimal custom CSS or Bootstrap</li>
+						<li><strong>Deployment:</strong> Hosted via <a href="https://www.pythonanywhere.com/"
+								target="_blank" rel="noopener noreferrer">PythonAnywhere</a> (see link below)</li>
+						<li><strong>Local/Dev Usage:</strong> Run <code>python app.py</code> in a virtual environment
+							for
+							quick
+							local testing</li>
+					</ul>
+
+					<hr class="major" />
+
+					<!-- Development Highlights -->
+					<h2>Development Highlights</h2>
+					<ul>
+						<li>
+							<strong>Paper-to-Code Mapping:</strong> Every row in the table was carefully translated into
+							Python conditions and computations, ensuring all edge cases (e.g., big drops in BG) were
+							covered.
+						</li>
+						<li>
+							<strong>Real-World Testing:</strong> My sister tested in a simulated ICU environment,
+							providing
+							feedback on clarity, usability, and correctness of the recommendation text.
+						</li>
+						<li>
+							<strong>Incremental Improvements:</strong> The instructions (e.g. "Hold infusion 30min")
+							were
+							refined multiple times to match real-world nurse workflows.
+						</li>
+					</ul>
+
+					<hr class="major" />
+
+					<!-- Challenges & Solutions -->
+					<h2>Challenges & Solutions</h2>
+					<ul>
+						<li>
+							<strong>Edge-Case Handling:</strong> Some rules overlapped or had intricate numeric
+							thresholds.
+							Solution: thorough unit testing of each possible BG range and infusion change scenario.
+						</li>
+						<li>
+							<strong>Keeping It Nurse-Friendly:</strong> Medical staff prefer explicit instructions
+							without
+							unnecessary jargon. We kept outputs simple.
+						</li>
+						<li>
+							<strong>Potential EHR Integration:</strong> While not yet implemented, the design
+							anticipates
+							an API approach for future auto-fetching of BG values from a patient’s EHR.
+						</li>
+					</ul>
+
+					<hr class="major" />
+
+					<!-- Lessons Learned -->
+					<h2>Lessons Learned</h2>
+					<ul>
+						<li>
+							<strong>Direct Nurse Involvement:</strong> The best feedback loop involves actual users
+							(in
+							this case, an ICU nurse) from day one of development.
+						</li>
+						<li>
+							<strong>Lightweight Architecture:</strong> A simple Flask-based approach is sufficient for
+							many
+							clinical tools, especially internal hospital use.
+						</li>
+						<li>
+							<strong>Documentation of Rule Changes:</strong> Keeping each threshold in a well-organized
+							dataset (or JSON) can make policy updates straightforward.
+						</li>
+					</ul>
+
+					<hr class="major" />
+
+					<!-- Future Directions -->
+					<h2>Future Directions</h2>
+					<ul>
+						<li>
+							<strong>Data Tracking:</strong> Log each recommended change, building a patient-specific BG
+							profile over time.
+						</li>
+						<li>
+							<strong>EHR Integration:</strong> Automatic input from hospital systems to reduce manual
+							typing
+							and potential mis-entries.
+						</li>
+						<li>
+							<strong>Expanded Medical Calculations:</strong> Incorporating additional ICU dosing
+							protocols
+							(e.g., sedation, vasopressors) for a broader critical-care tool.
+						</li>
+					</ul>
+
+					<hr class="major" />
+
+					<!-- Interested in More? -->
+					<h2>Interested in More?</h2>
+					<p>
+						<strong>Live Demo:</strong> You can try the calculator here:
+						<a href="https://johnpaulfeliciano98.pythonanywhere.com/" target="_blank"
+							rel="noopener noreferrer">
+							ICU Insulin Infusion Calculator (Hosted on PythonAnywhere)
+						</a>.
+					</p>
+					<p>
+						<strong>Source Code: </strong><a href="https://github.com/johnpaulfeliciano98/bg-check"
+							target="_blank" rel="noopener noreferrer">ICU Insulin Infusion Calculator
+						</a>
+					</p>
+				</section>
+
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
+						<li><a href="aboutme.html">About Me</a></li>
+						<li>
+							<span class="opener"> Programming Projects</span>
+							<ul>
+								<li><a href="911-forecasting.html">Real-Time EMS Call Prediction</a>
+								</li>
+								<li><a href="bg-check.html">ICU Insulin Infusion Calculator</a></li>
+								<li><a href="emr-microservice.html">Automated ICD-10 Coding for EMR Data</a></li>
+								<li><a href="patient-database.html">Patient Charting Database</a></li>
+								<li><a href="ping-trace.html">Ping Trace</a></li>
+								<li><a href="vpambu-invoice-tool.html">Ambulance Billing Invoice Report Tool</a></li>
+							</ul>
+						</li>
+						<li>
+							<span class="opener">Data Analysis Projects</span>
+							<ul>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Airbnb%20Dashboard"
+										target="_blank" rel="noopener noreferrer">
+										Airbnb Dashboard <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Bike%20Sales%20Analysis"
+										target="_blank" rel="noopener noreferrer">
+										Bike Sales Analysis <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/COVID%20Death%20and%20Vaccination%20Data%20Exploration"
+										target="_blank" rel="noopener noreferrer">
+										COVID Death and Vaccination Data Exploration <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Data%20Professional%20Survey%20Dashboard"
+										target="_blank" rel="noopener noreferrer">
+										Data Professional Survey Dashboard <i class="fab fa-github"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://github.com/johnpaulfeliciano98/data-analysis-projects/tree/main/Nashville%20Housing%20Data%20Cleaning"
+										target="_blank" rel="noopener noreferrer">
+										Nashville Housing Data Cleaning <i class="fab fa-github"></i>
+									</a>
+								</li>
+							</ul>
+
+						</li>
+					</ul>
+				</nav>
+
+				<!-- Get in touch Section -->
+				<section>
+					<header class="major">
+						<h2>Get in touch</h2>
+					</header>
+					<p>I'm actively seeking opportunities as a Software Engineer or Developer. If you're hiring
+						or have
+						a role that aligns with my skills, feel free to reach out!</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope">
+							<a href="mailto:johnpaulfeliciano98@gmail.com">johnpaulfeliciano98@gmail.com</a>
+						</li>
+						<li class="icon solid fa-phone">
+							<a href="tel:+19513156763">(951) 315-6763</a>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">
+						&copy; 2025 John Paul Feliciano. Built with HTML5 UP.
+					</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
